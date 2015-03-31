@@ -1,0 +1,32 @@
+package com.leetcode.problem105.constructbinarytreefrompreorderandinorderpraversal;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import com.leetcode.problem.utils.TreeNode;
+
+/**
+ * Given inorder and postorder traversal of a tree, construct the binary tree.
+ * 
+ * Note: You may assume that duplicates do not exist in the tree.
+ * 
+ * @author dongyuxi
+ *
+ */
+public class SolutionTest {
+    public Solution solution = null;
+
+    @Before
+    public void setup() {
+        solution = new Solution();
+    }
+
+    @Test
+    public void test() {
+        int[] inorder = new int[]{1, 2, 3};
+        int[] preorder = new int[]{2, 1, 3};
+        TreeNode root = solution.buildTree(preorder, inorder);
+        root.inorder();
+        root.preorder();
+    }
+}

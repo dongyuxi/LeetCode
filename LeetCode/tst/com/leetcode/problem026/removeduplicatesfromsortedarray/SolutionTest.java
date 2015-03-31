@@ -1,0 +1,36 @@
+package com.leetcode.problem026.removeduplicatesfromsortedarray;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import com.leetcode.problem026.removeduplicatesfromsortedarray.Solution;
+
+/**
+ * Given a sorted array, remove the duplicates in place such that each element
+ * appear only once and return the new length.
+ * 
+ * Do not allocate extra space for another array, you must do this in place with
+ * constant memory.
+ * 
+ * For example, Given input array A = [1,1,2],
+ * 
+ * Your function should return length = 2, and A is now [1,2].
+ * 
+ * @author dongyuxi
+ *
+ */
+public class SolutionTest {
+    public Solution solution = null;
+
+    @Before
+    public void setup() {
+        solution = new Solution();
+    }
+
+    @Test
+    public void test() {
+        assertEquals(2, solution.removeDuplicates(new int[]{1, 1, 2}));
+    }
+}
