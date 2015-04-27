@@ -17,13 +17,19 @@ package com.leetcode.problem055.jumpgame;
  *
  */
 public class Solution {
-    public boolean canJump(int[] A) {
-        if (null == A || 0 == A.length) {
+    public boolean canJump(int[] nums) {
+        if (null == nums || 0 == nums.length) {
             return false;
         }
-
-        
-
-        return false;
+        int maxJump = nums[0];
+        for (int i = 1; i < nums.length; i++) {
+            if (maxJump > 0) {
+                maxJump--;
+                maxJump = Math.max(maxJump, nums[i]);
+            } else {
+                return false;
+            }
+        }
+        return true;
     }
 }
