@@ -1,4 +1,4 @@
-package com.leetcode.problem199.binarytreerightsideview;
+package com.leetcode.problem257.binarytreepaths;
 
 import static org.junit.Assert.assertEquals;
 
@@ -10,17 +10,18 @@ import org.junit.Test;
 import com.leetcode.problem.utils.TreeNode;
 
 /**
- * Given a binary tree, imagine yourself standing on the right side of it, 
- * return the values of the nodes you can see ordered from top to bottom.
+ * Given a binary tree, return all root-to-leaf paths.
  * 
- * For example:
- * Given the following binary tree,
- *    1            <---
+ * For example, given the following binary tree:
+ * 
+ *    1
  *  /   \
- * 2     3         <---
- *  \     \
- *   5     4       <---
- * You should return [1, 3, 4].
+ * 2     3
+ *  \
+ *   5
+ * All root-to-leaf paths are:
+ * 
+ * ["1->2->5", "1->3"]
  * 
  * @author dongyuxi
  *
@@ -47,12 +48,10 @@ public class SolutionTest {
         TreeNode node1 = new TreeNode(1);
         TreeNode node2 = new TreeNode(2);
         TreeNode node3 = new TreeNode(3);
-        TreeNode node4 = new TreeNode(4);
         TreeNode node5 = new TreeNode(5);
         node1.left = node2;
         node1.right = node3;
         node2.right = node5;
-        node3.right = node4;
-        assertEquals(Arrays.asList(1, 3, 4), solution.rightSideView(node1));
+        assertEquals(Arrays.asList("1->2->5", "1->3"), solution.binaryTreePaths(node1));
     }
 }
