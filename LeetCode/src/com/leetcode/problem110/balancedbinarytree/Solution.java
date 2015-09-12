@@ -20,12 +20,12 @@ public class Solution {
             return true;
         }
 
-        int depth = checkBalancedUsingHeihg(root);
+        int depth = checkBalancedUsingHeight(root);
 
         return (depth != -1) ? true : false;
     }
 
-    private int checkBalancedUsingHeihg(TreeNode root) {
+    private int checkBalancedUsingHeight(TreeNode root) {
         if (!balanced) {
             return -1;
         }
@@ -34,9 +34,10 @@ public class Solution {
             return 0;
         }
 
-        int leftDepth = checkBalancedUsingHeihg(root.left);
-        int rightDepth = checkBalancedUsingHeihg(root.right);
+        int leftDepth = checkBalancedUsingHeight(root.left);
+        int rightDepth = checkBalancedUsingHeight(root.right);
         if (leftDepth == -1 || rightDepth == -1 || Math.abs(leftDepth - rightDepth) > 1) {
+            balanced = false;
             return -1;
         }
         return Math.max(leftDepth, rightDepth) + 1;
